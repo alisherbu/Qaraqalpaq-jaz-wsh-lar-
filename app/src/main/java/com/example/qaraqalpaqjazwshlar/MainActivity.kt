@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
