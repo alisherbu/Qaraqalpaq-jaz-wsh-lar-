@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.QaraqalpaqJazıwshıları">
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.QaraqalpaqJazıwshıları.NoActionBar">
             <intent-filter>
@@ -19,7 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.BioActivity">
+        <activity android:name=".activity.BioActivity">
 
         </activity>
     </application>

@@ -1,4 +1,4 @@
-package com.example.qaraqalpaqjazwshlar.ui
+package com.example.qaraqalpaqjazwshlar.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

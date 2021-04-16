@@ -1,4 +1,4 @@
-package com.example.qaraqalpaqjazwshlar.ui
+package com.example.qaraqalpaqjazwshlar.fragment
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment
 import com.example.qaraqalpaqjazwshlar.R
 import com.example.qaraqalpaqjazwshlar.data.PoetsDao
 import com.example.qaraqalpaqjazwshlar.data.PoetsDatabase
+import com.example.qaraqalpaqjazwshlar.activity.BioActivity
+import com.example.qaraqalpaqjazwshlar.ui.PoetAdapter
 import kotlinx.android.synthetic.main.fragment_poets_list.*
 import java.util.*
 import kotlin.collections.ArrayList
