@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
+import android.view.WindowManager
 import androidx.fragment.app.Fragment
 import com.example.qaraqalpaqjazwshlar.R
 import com.example.qaraqalpaqjazwshlar.data.PoetsDao
@@ -25,8 +26,9 @@ class FragmentPoets : Fragment(R.layout.fragment_poets_list) {
         dao = PoetsDatabase.getInstance(requireContext()).dao()
         val intent = Intent(requireContext(), BioActivity::class.java)
         adapter.setOnItemClickListener { _, _, poetName ->
-            val bios = dao.getBiographyById(dao.getIdByPoetName(poetName))
-            intent.putExtra("bio", bios)
+            val id = dao.getIdByPoetName(poetName)
+            intent.putExtra("id", id)
+
             startActivity(intent)
         }
         setData()

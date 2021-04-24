@@ -14,10 +14,10 @@ abstract class PoetsDatabase : RoomDatabase() {
             if (!::INSTANCE.isInitialized) {
                 INSTANCE = Room.databaseBuilder(
                         context,
-                        PoetsDatabase::class.java, "poets2.db"
+                        PoetsDatabase::class.java, "poets3.db"
                 )
                         .allowMainThreadQueries()
-                        .createFromAsset("poets2.db")
+                        .createFromAsset("poets3.db")
                         .build()
             }
             return INSTANCE

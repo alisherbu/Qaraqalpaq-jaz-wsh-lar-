@@ -17,6 +17,8 @@
         android:hint="Search"
         android:drawableStart="@drawable/ic_baseline_search_24"
         android:background="@drawable/item_background"
+        android:inputType="text"
+
         />
     <androidx.recyclerview.widget.RecyclerView
         app:layout_constraintTop_toBottomOf="@id/etSearch"

@@ -19,7 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.BioActivity">
+        <activity android:name=".activity.BioActivity"
+            android:theme="@style/Theme.QaraqalpaqJazıwshıları.NoActionBar">
 
         </activity>
     </application>
