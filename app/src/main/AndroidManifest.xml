@@ -12,7 +12,8 @@
         <activity
             android:name=".activity.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/Theme.QaraqalpaqJazıwshıları.NoActionBar">
+            android:theme="@style/Theme.QaraqalpaqJazıwshıları.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
