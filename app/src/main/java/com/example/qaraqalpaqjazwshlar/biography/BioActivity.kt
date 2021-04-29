@@ -12,6 +12,7 @@ import com.example.qaraqalpaqjazwshlar.data.PoetsDao
 import com.example.qaraqalpaqjazwshlar.data.PoetsDatabase
 import kotlinx.android.synthetic.main.avtivity_bio.*
 
+@Suppress("DEPRECATION")
 class BioActivity : AppCompatActivity() {
     var id = 1
     var pos = 0

@@ -28,7 +28,6 @@ class FragmentPoets : Fragment(R.layout.fragment_poets_list) {
         adapter.setOnItemClickListener { _, _, poetName ->
             val id = dao.getIdByPoetName(poetName)
             intent.putExtra("id", id)
-
             startActivity(intent)
         }
         setData()
