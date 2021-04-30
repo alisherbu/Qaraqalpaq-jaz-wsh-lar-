@@ -9,13 +9,14 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 class PoetPresenter(var fragment: FragmentPoets, var view: PoetView) {
-    private val dao= PoetsDatabase.getInstance(fragment.requireContext()).dao()
-   lateinit var poetList:List<String>
-    fun getAllPoets(){
-        poetList=dao.getAllPoets()
+    private val dao = PoetsDatabase.getInstance(fragment.requireContext()).dao()
+    lateinit var poetList: List<String>
+    fun getAllPoets() {
+        poetList = dao.getAllPoets()
         view.setData(poetList)
     }
-    fun startActivity(){
+
+    fun startActivity() {
         val intent = Intent(fragment.requireContext(), BioActivity::class.java)
         fragment.adapter.setOnItemClickListener { _, _, poetName ->
             val id = dao.getIdByPoetName(poetName)
@@ -23,11 +24,13 @@ class PoetPresenter(var fragment: FragmentPoets, var view: PoetView) {
             fragment.startActivity(intent)
         }
     }
-    fun filterNames(){
+
+    fun filterNames() {
         fragment.etSearch.addTextChangedListener {
             filter(it.toString())
         }
     }
+
     private fun filter(text: String) {
         val filteredNames = ArrayList<String>()
         poetList.filterTo(filteredNames) {

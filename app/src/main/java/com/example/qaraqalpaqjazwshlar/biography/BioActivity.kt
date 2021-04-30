@@ -18,6 +18,7 @@ class BioActivity : AppCompatActivity(), BiographyView {
         val id= intent.getIntExtra("id", 1)
         presenter=BiographyPresenter(this,this,id)
         toolbar_bio.setTitle(R.string.menu_poets)
+        toolbar_bio.title =getString(R.string.menu_poets)
         setSupportActionBar(toolbar_bio)
 
         supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_24)
@@ -42,7 +43,7 @@ class BioActivity : AppCompatActivity(), BiographyView {
                 presenter.changeBookmark(FIRST_PRESSED)
             }
             R.id.share -> {
-                presenter.share(tvBio.text)
+                presenter.share()
             }
             else -> return false
         }

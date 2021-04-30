@@ -11,6 +11,7 @@ class FragmentPoets : Fragment(R.layout.fragment_poets_list), PoetView {
     lateinit var presenter: PoetPresenter
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        presenter = PoetPresenter(this, this)
         presenter.getAllPoets()
         presenter.filterNames()
         presenter.startActivity()

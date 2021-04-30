@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.QaraqalpaqJazıwshıları">
-        <activity android:name=".splash.SplashScreenActivity">
+        <activity android:name=".splash.SplashScreenActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.QaraqalpaqJazıwshıları.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,8 +19,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.MainActivity"
-            android:label="@string/app_name"
+            android:name=".main.MainActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.QaraqalpaqJazıwshıları.NoActionBar"
             android:windowSoftInputMode="stateAlwaysHidden">
         </activity>
