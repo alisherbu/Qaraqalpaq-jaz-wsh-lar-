@@ -1,8 +1,5 @@
-package com.example.qaraqalpaqjazwshlar.poets
-
-interface PoetView {
+package com.example.qaraqalpaqjazwshlar.favorite
+interface FavoriteView {
     fun setData(models:List<String>)
-    fun filteredNames(list:List<String>)
-
 
 }

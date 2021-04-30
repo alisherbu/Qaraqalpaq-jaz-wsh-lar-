@@ -1,19 +1,15 @@
-package com.example.qaraqalpaqjazwshlar.poets
-
 import android.content.Intent
-import androidx.core.widget.addTextChangedListener
 import com.example.qaraqalpaqjazwshlar.biography.BioActivity
 import com.example.qaraqalpaqjazwshlar.data.PoetsDao
 import com.example.qaraqalpaqjazwshlar.data.PoetsDatabase
-import kotlinx.android.synthetic.main.fragment_poets_list.*
-import java.util.*
-import kotlin.collections.ArrayList
+import com.example.qaraqalpaqjazwshlar.favorite.FavoriteView
+import com.example.qaraqalpaqjazwshlar.favorite.FragmentFavorite
 
-class PoetPresenter(private var fragment: FragmentPoets, var view: PoetView) {
+class FavoritePresenter(private var fragment: FragmentFavorite, var view: FavoriteView) {
     private var dao: PoetsDao = PoetsDatabase.getInstance(fragment.requireContext()).dao()
-    private var poetList = dao.getAllPoets()
+    private var poetList = dao.getAllFavorites()
 
-    fun getAllPoets() {
+    fun getAllFavorites() {
         view.setData(poetList)
     }
 
@@ -27,18 +23,5 @@ class PoetPresenter(private var fragment: FragmentPoets, var view: PoetView) {
         }
     }
 
-    fun filterNames() {
-        fragment.etSearch.addTextChangedListener {
-            filter(it.toString())
-        }
-    }
 
-    private fun filter(text: String) {
-        val filteredNames = ArrayList<String>()
-        poetList.filterTo(filteredNames) {
-            it.toLowerCase(Locale.ROOT).contains(text.toLowerCase(Locale.ROOT))
-        }
-        view.filteredNames(filteredNames)
-
-    }
 }

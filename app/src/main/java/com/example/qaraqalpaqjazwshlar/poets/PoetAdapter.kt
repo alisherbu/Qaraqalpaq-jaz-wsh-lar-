@@ -1,4 +1,4 @@
-package com.example.qaraqalpaqjazwshlar.ui
+package com.example.qaraqalpaqjazwshlar.poets
 
 import android.view.LayoutInflater
 import android.view.View

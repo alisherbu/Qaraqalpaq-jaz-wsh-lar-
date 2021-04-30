@@ -9,16 +9,16 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.example.qaraqalpaqjazwshlar.R
-import com.example.qaraqalpaqjazwshlar.fragment.FragmentChosen
+import com.example.qaraqalpaqjazwshlar.favorite.FragmentFavorite
 import com.example.qaraqalpaqjazwshlar.fragment.FragmentInfo
-import com.example.qaraqalpaqjazwshlar.fragment.FragmentPoets
+import com.example.qaraqalpaqjazwshlar.poets.FragmentPoets
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity() {
     private val fragmentPoets = FragmentPoets()
-    private val fragmentChosen = FragmentChosen()
+    private val fragmentChosen = FragmentFavorite()
     private val fragmentInfo=FragmentInfo()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
