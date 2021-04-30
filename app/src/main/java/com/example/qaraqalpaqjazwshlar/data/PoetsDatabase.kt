@@ -1,7 +1,6 @@
 package com.example.qaraqalpaqjazwshlar.data
 
 import android.content.Context
-import androidx.room.Dao
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase

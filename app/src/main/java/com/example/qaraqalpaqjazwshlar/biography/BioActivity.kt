@@ -1,5 +1,6 @@
 package com.example.qaraqalpaqjazwshlar.biography
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -8,10 +9,9 @@ import com.example.qaraqalpaqjazwshlar.R
 import kotlinx.android.synthetic.main.avtivity_bio.*
 
 class BioActivity : AppCompatActivity(), BiographyView {
-    lateinit var presenter: BiographyPresenter
-    companion object{
-        const val FIRST_PRESSED=true
-    }
+    private var favoriteItem: MenuItem? = null
+    private lateinit var presenter: BiographyPresenter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.avtivity_bio)
@@ -29,8 +29,8 @@ class BioActivity : AppCompatActivity(), BiographyView {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.biography_toolbar, menu)
-        presenter.menuItem = menu!!.findItem(R.id.favorite)
-        presenter.changeBookmark(!FIRST_PRESSED)
+        favoriteItem = menu!!.findItem(R.id.favorite)
+        presenter.setBookmark()
         return true
     }
 
@@ -40,10 +40,10 @@ class BioActivity : AppCompatActivity(), BiographyView {
                 finish()
             }
             R.id.favorite -> {
-                presenter.changeBookmark(FIRST_PRESSED)
+                presenter.changeBookmark()
             }
             R.id.share -> {
-                presenter.share()
+                presenter.share(tvBio.text)
             }
             else -> return false
         }
@@ -54,5 +54,18 @@ class BioActivity : AppCompatActivity(), BiographyView {
         tvPoetName.text = poetName
         tvPoetLife.text = lifeSpan
         tvBio.text = biography
+    }
+
+    override fun changeBookmark(isPressed: Boolean) {
+        if (isPressed) favoriteItem!!.setIcon(R.drawable.ic_baseline_bookmark_24)
+        else favoriteItem!!.setIcon(R.drawable.ic_baseline_bookmark_border_24)
+    }
+
+    override fun share(text: CharSequence) {
+        val sharingIntent = Intent(Intent.ACTION_SEND)
+        sharingIntent.type = "text/plain"
+        sharingIntent.putExtra(Intent.EXTRA_TEXT, text)
+        sharingIntent.putExtra(Intent.EXTRA_SUBJECT, "Subject")
+        startActivity(Intent.createChooser(sharingIntent, "Bólisiw"))
     }
 }

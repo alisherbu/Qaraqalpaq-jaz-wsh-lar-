@@ -1,20 +1,12 @@
 package com.example.qaraqalpaqjazwshlar.data
 
-import androidx.room.Dao
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
 
 @Dao
 interface PoetsDao {
-    @Query("SELECT poetName FROM jaziwshilar")
-    fun getAllPoets(): List<String>
 
     @Query("SELECT biography FROM jaziwshilar WHERE id =:id")
     fun getBiographyById(id: Int): String
-
-    @Query("SELECT id FROM jaziwshilar WHERE poetName=:poetName")
-    fun getIdByPoetName(poetName: String):Int
 
     @Query("SELECT lifeSpan FROM jaziwshilar WHERE id=:id")
     fun getLifeSpanById(id: Int):String
@@ -31,6 +23,9 @@ interface PoetsDao {
     @Query("UPDATE jaziwshilar SET date=:currentTime WHERE id=:id")
     fun setDate(id: Int,currentTime:Long)
 
-    @Query("SELECT poetName FROM jaziwshilar WHERE isFavorite=1 ORDER by date DESC")
-    fun getAllFavorites():List<String>
+    @Query("SELECT id,poetName FROM jaziwshilar WHERE isFavorite=1 ORDER by date DESC")
+    fun getAllFavorites():List<Poets>
+
+    @Query("SELECT id , poetName from jaziwshilar")
+    fun getAllPoetsAndId():List<Poets>
 }
