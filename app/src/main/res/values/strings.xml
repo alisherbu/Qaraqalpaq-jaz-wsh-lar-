@@ -1,14 +1,22 @@
 <resources>
-    <string name="app_name">Qaraqalpaq jazıwshıları</string>
+    <string name="app_name">Jazıwshılar</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Қарақалпақ жазыушылары</string>
     <string name="nav_header_subtitle">Библиографиялық  мағлыўмат</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="pref_alphabet_latin" translatable="false">qq</string>
+    <string name="pref_alphabet_cyrillic" translatable="false">be</string>
+    <string name="pref_alphabet_key" translatable="false">alphabet_key</string>
+    <string name="pref_alphabet_default" translatable="false">@string/pref_alphabet_latin</string>
 
     <string name="menu_poets">Жазыушылар</string>
     <string name="menu_chosen">Сайландылар</string>
     <string name="menu_info">Мағлуўмат</string>
     <string name="search">излеў</string>
+    <string name="empty">Сайландылар бос</string>
+    <string name="n_n_extremum_pr_ss_n2011">\nТашкент\n«EXTREMUM PRЕSS»\n2011</string>
+    <string name="bioInfo">(Библиографиялық мағлыўмат)</string>
+    <string name="n_n">ҚАРАҚАЛПАҚСТАН\nРЕСПУБЛИКАСЫ\nЖАЗЫЎШЫЛАРЫ</string>
 </resources>

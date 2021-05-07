@@ -1,15 +1,16 @@
 package com.example.qaraqalpaqjazwshlar.poets
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.RecyclerView
 import com.example.qaraqalpaqjazwshlar.R
 import com.example.qaraqalpaqjazwshlar.data.Poets
 import kotlinx.android.synthetic.main.item_poet.view.*
 
-class PoetAdapter : RecyclerView.Adapter<PoetAdapter.PoetListViewHolder>() {
-
+class PoetAdapter(): RecyclerView.Adapter<PoetAdapter.PoetListViewHolder>() {
     inner class PoetListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun populateModel(model: Poets, pos: Int) {

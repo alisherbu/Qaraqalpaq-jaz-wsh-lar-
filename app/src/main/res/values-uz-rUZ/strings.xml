@@ -1,2 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">Jazıwshılar</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Qaraqalpaq jazıwshıları</string>
+    <string name="nav_header_subtitle">Bibliografiyalıq maǵlıwmat</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_poets">Jazıwshılar</string>
+    <string name="menu_chosen">Saylandılar</string>
+    <string name="menu_info">Maǵlıwmat</string>
+    <string name="search">izlew</string>
+    <string name="empty">Saylandılar bos</string>
+    <string name="n_n_extremum_pr_ss_n2011">\nТашкент\n«EXTREMUM PRЕSS»\n2011</string>
+    <string name="bioInfo">(Библиографиялық мағлыўмат)</string>
+    <string name="n_n">ҚАРАҚАЛПАҚСТАН\nРЕСПУБЛИКАСЫ\nЖАЗЫЎШЫЛАРЫ</string>
+</resources>

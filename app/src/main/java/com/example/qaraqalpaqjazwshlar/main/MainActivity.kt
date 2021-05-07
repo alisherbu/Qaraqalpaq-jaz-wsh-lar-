@@ -2,7 +2,9 @@ package com.example.qaraqalpaqjazwshlar.main
 
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
@@ -14,11 +16,15 @@ import com.example.qaraqalpaqjazwshlar.poets.FragmentPoets
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
+import java.util.*
 
+
+@Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity() {
     private val fragmentPoets = FragmentPoets()
     private val fragmentChosen = FragmentFavorite()
     private val fragmentInfo = FragmentInfo()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -62,7 +68,21 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.latin -> {
+                Toast.makeText(this, R.string.menu_poets, Toast.LENGTH_SHORT).show()
+            }
+            R.id.kirill -> {
+                Toast.makeText(this, "kirill", Toast.LENGTH_SHORT).show()
+            }
+        }
+        return true
+    }
+
+
     private fun View.replace(fragment: Fragment) {
         supportFragmentManager.beginTransaction().replace(this.id, fragment).commit()
     }
+
 }

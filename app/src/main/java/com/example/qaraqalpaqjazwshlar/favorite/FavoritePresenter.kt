@@ -11,6 +11,6 @@ class FavoritePresenter(fragment: FragmentFavorite, var view: FavoriteView) {
     }
 
     fun startActivity() {
-        view.startActivity(dao)
+        view.startActivity()
     }
 }
