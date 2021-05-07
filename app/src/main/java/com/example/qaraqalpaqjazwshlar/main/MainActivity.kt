@@ -71,10 +71,10 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.latin -> {
-                Toast.makeText(this, R.string.menu_poets, Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,"Latin", Toast.LENGTH_SHORT).show()
             }
             R.id.kirill -> {
-                Toast.makeText(this, "kirill", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Kirill", Toast.LENGTH_SHORT).show()
             }
         }
         return true

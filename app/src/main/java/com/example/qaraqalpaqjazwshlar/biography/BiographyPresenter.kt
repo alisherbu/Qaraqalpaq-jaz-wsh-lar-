@@ -29,6 +29,7 @@ class BiographyPresenter(activity: BioActivity, var view: BiographyView, var id:
     fun changeBookmark() {
         isFavorite = !isFavorite
         if (isFavorite) {
+
             dao.setStatus(id, 1)
             dao.setDate(id, System.currentTimeMillis())
         } else {

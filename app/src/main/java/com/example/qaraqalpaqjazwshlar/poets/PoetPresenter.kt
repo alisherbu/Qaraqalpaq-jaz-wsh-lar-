@@ -60,6 +60,7 @@ class PoetPresenter(fragment: FragmentPoets, var view: PoetView) {
                 'Ó','ó'->s+='ө'
                 'Ń','ń'->s+='ӊ'
                 'Ú','ú'->s+='ү'
+                else-> s+=i
             }
         }
         return s

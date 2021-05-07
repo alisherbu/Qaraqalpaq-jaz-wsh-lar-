@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.qaraqalpaqjazwshlar.R
 import kotlinx.android.synthetic.main.avtivity_bio.*
@@ -57,8 +58,14 @@ class BioActivity : AppCompatActivity(), BiographyView {
     }
 
     override fun changeBookmark(isPressed: Boolean) {
-        if (isPressed) favoriteItem!!.setIcon(R.drawable.ic_baseline_bookmark_24)
-        else favoriteItem!!.setIcon(R.drawable.ic_baseline_bookmark_border_24)
+        if (isPressed){
+            "Saylandılarǵa qosıldı".showToast()
+            favoriteItem!!.setIcon(R.drawable.ic_baseline_bookmark_24)
+        }
+        else{
+            "Saylandılardan óshirildi".showToast()
+            favoriteItem!!.setIcon(R.drawable.ic_baseline_bookmark_border_24)
+        }
     }
 
     override fun share(text: CharSequence) {
@@ -67,5 +74,8 @@ class BioActivity : AppCompatActivity(), BiographyView {
         sharingIntent.putExtra(Intent.EXTRA_TEXT, text)
         sharingIntent.putExtra(Intent.EXTRA_SUBJECT, "Subject")
         startActivity(Intent.createChooser(sharingIntent, "Bólisiw"))
+    }
+    private fun String.showToast(){
+        Toast.makeText(this@BioActivity,this,Toast.LENGTH_SHORT).show()
     }
 }
