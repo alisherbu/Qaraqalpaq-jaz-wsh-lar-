@@ -7,6 +7,7 @@
     android:orientation="vertical">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_bio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/Theme.QaraqalpaqJazıwshıları.AppBarOverlay"
@@ -22,6 +23,7 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginHorizontal="@dimen/margin_standard"
@@ -62,7 +64,8 @@
                 android:fontFamily="sans-serif-medium"
                 android:textColor="#CC000000"
                 android:textSize="18sp"
-                android:text=""/>
+                android:text=""
+                />
         </LinearLayout>
 
     </ScrollView>

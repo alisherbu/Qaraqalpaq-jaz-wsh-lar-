@@ -31,13 +31,15 @@
         app:layout_constraintStart_toStartOf="@id/etSearch"
         app:layout_constraintEnd_toEndOf="@id/etSearch"
         android:background="@drawable/layout_background">
-        <androidx.recyclerview.widget.RecyclerView
+        <com.mlsdev.animatedrv.AnimatedRecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
+            app:animationDuration="600"
+            app:layoutManagerOrientation="vertical"
+            app:layoutManagerReverse="false"
+            app:layoutManagerType="linear"
             android:layout_marginHorizontal="@dimen/margin_standard"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

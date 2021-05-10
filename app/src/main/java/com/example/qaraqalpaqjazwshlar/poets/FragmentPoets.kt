@@ -22,6 +22,7 @@ class FragmentPoets : Fragment(R.layout.fragment_poets_list), PoetView {
         presenter.getAllPoets()
         presenter.startActivity()
         recyclerView.adapter = adapter
+//        recyclerView.scheduleLayoutAnimation()
         recyclerView.addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL))
 
         etSearch.addTextChangedListener {
@@ -41,7 +42,6 @@ class FragmentPoets : Fragment(R.layout.fragment_poets_list), PoetView {
     override fun startActivity() {
         val intent = Intent(requireContext(), BioActivity::class.java)
         adapter.setOnItemClickListener { item, _, id ->
-
             intent.putExtra("id", id)
             startActivity(intent)
         }

@@ -2,11 +2,12 @@ package com.example.qaraqalpaqjazwshlar.biography
 
 import android.os.Build
 import android.text.Html
+import android.widget.Toast
 import com.example.qaraqalpaqjazwshlar.data.PoetsDatabase
 
 
 @Suppress("DEPRECATION")
-class BiographyPresenter(activity: BioActivity, var view: BiographyView, var id: Int) {
+class BiographyPresenter(var activity: BioActivity, var view: BiographyView, var id: Int) {
     private val dao = PoetsDatabase.getInstance(activity).dao()
     private var isFavorite = dao.getStatus(id) == 1
     fun setBookmark() {
@@ -29,10 +30,11 @@ class BiographyPresenter(activity: BioActivity, var view: BiographyView, var id:
     fun changeBookmark() {
         isFavorite = !isFavorite
         if (isFavorite) {
-
+            Toast.makeText(activity,"Saylandılarǵa qosıldı",Toast.LENGTH_SHORT).show()
             dao.setStatus(id, 1)
             dao.setDate(id, System.currentTimeMillis())
         } else {
+            Toast.makeText(activity,"Saylandılardan óshirildi",Toast.LENGTH_SHORT).show()
             dao.setStatus(id, 0)
         }
         view.changeBookmark(isFavorite)

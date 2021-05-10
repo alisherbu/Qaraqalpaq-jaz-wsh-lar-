@@ -11,7 +11,7 @@ import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import com.example.qaraqalpaqjazwshlar.R
 import com.example.qaraqalpaqjazwshlar.favorite.FragmentFavorite
-import com.example.qaraqalpaqjazwshlar.fragment.FragmentInfo
+import com.example.qaraqalpaqjazwshlar.info.FragmentInfo
 import com.example.qaraqalpaqjazwshlar.poets.FragmentPoets
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*

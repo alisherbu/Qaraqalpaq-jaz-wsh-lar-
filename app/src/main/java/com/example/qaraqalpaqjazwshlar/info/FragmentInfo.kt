@@ -1,4 +1,4 @@
-package com.example.qaraqalpaqjazwshlar.fragment
+package com.example.qaraqalpaqjazwshlar.info
 
 import android.os.Bundle
 import android.view.View

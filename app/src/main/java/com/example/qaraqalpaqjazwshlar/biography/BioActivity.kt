@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
+import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import com.example.qaraqalpaqjazwshlar.R
 import kotlinx.android.synthetic.main.avtivity_bio.*
@@ -16,10 +16,23 @@ class BioActivity : AppCompatActivity(), BiographyView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.avtivity_bio)
-        val id= intent.getIntExtra("id", 1)
-        presenter=BiographyPresenter(this,this,id)
+
+        val fromTop=AnimationUtils.loadAnimation(this,R.anim.alpha_from_in)
+        app_bar_bio.startAnimation(fromTop)
+        val fromLeft=AnimationUtils.loadAnimation(this,R.anim.from_left)
+        fromLeft.startOffset=300
+        tvPoetName.startAnimation(fromLeft)
+        val fadeFromIn=AnimationUtils.loadAnimation(this,R.anim.fade_from_in)
+        fadeFromIn.startOffset=800
+        tvPoetLife.startAnimation(fadeFromIn)
+        val fromBottom = AnimationUtils.loadAnimation(this, R.anim.from_bottom)
+        fromBottom.startOffset=1000
+        tvBio.startAnimation(fromBottom)
+
+        val id = intent.getIntExtra("id", 1)
+        presenter = BiographyPresenter(this, this, id)
         toolbar_bio.setTitle(R.string.menu_poets)
-        toolbar_bio.title =getString(R.string.menu_poets)
+        toolbar_bio.title = getString(R.string.menu_poets)
         setSupportActionBar(toolbar_bio)
 
         supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_24)
@@ -58,14 +71,8 @@ class BioActivity : AppCompatActivity(), BiographyView {
     }
 
     override fun changeBookmark(isPressed: Boolean) {
-        if (isPressed){
-            "Saylandılarǵa qosıldı".showToast()
-            favoriteItem!!.setIcon(R.drawable.ic_baseline_bookmark_24)
-        }
-        else{
-            "Saylandılardan óshirildi".showToast()
-            favoriteItem!!.setIcon(R.drawable.ic_baseline_bookmark_border_24)
-        }
+        if (isPressed) favoriteItem!!.setIcon(R.drawable.ic_baseline_bookmark_24)
+        else favoriteItem!!.setIcon(R.drawable.ic_baseline_bookmark_border_24)
     }
 
     override fun share(text: CharSequence) {
@@ -75,7 +82,5 @@ class BioActivity : AppCompatActivity(), BiographyView {
         sharingIntent.putExtra(Intent.EXTRA_SUBJECT, "Subject")
         startActivity(Intent.createChooser(sharingIntent, "Bólisiw"))
     }
-    private fun String.showToast(){
-        Toast.makeText(this@BioActivity,this,Toast.LENGTH_SHORT).show()
-    }
+
 }
