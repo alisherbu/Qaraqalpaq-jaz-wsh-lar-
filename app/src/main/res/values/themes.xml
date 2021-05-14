@@ -22,5 +22,4 @@
     <style name="Theme.QaraqalpaqJazıwshıları.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.QaraqalpaqJazıwshıları.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-
 </resources>

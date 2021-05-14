@@ -5,11 +5,11 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.animation.AnimationUtils
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.text.HtmlCompat
 import com.example.qaraqalpaqjazwshlar.R
 import com.example.qaraqalpaqjazwshlar.data.PoetsDatabase
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.avtivity_bio.*
 
 class BioActivity : AppCompatActivity(), BiographyView {
@@ -81,14 +81,13 @@ class BioActivity : AppCompatActivity(), BiographyView {
     override fun changeBookmark(isPressed: Boolean) {
 
         if (isPressed) {
-            if (toast) Toast.makeText(this, "Saylandılarǵa qosıldı", Toast.LENGTH_SHORT).show()
+            if (toast) Snackbar.make(ln, "Saylandılarǵa qosıldı", Snackbar.LENGTH_SHORT).show()
             favoriteItem!!.setIcon(R.drawable.ic_baseline_bookmark_24)
         } else {
-            if (toast) Toast.makeText(this, "Saylandılardan óshirildi", Toast.LENGTH_SHORT).show()
+            if (toast) Snackbar.make(ln, "Saylandılardan óshirildi", Snackbar.LENGTH_SHORT).show()
             favoriteItem!!.setIcon(R.drawable.ic_baseline_bookmark_border_24)
         }
         toast = true
     }
-
 
 }

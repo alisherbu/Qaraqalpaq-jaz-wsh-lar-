@@ -6,7 +6,8 @@
         android:icon="@drawable/ic_baseline_bookmark_border_24"
         android:title="favorite"
         android:orderInCategory="100"
-        app:showAsAction="always" />
+        app:showAsAction="always"
+        />
     <item
         android:id="@+id/share"
         android:icon="@drawable/ic_baseline_share_24"

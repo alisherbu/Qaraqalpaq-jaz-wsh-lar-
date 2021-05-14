@@ -36,6 +36,7 @@ android {
 
 dependencies {
     def room_version = "2.2.6"
+    def lottieVersion = "3.4.0"
 
     //room
     //noinspection GradleDependency
@@ -51,6 +52,7 @@ dependencies {
     implementation "com.mlsdev.animatedrv:library:2.0.0"
 
     implementation 'com.google.code.gson:gson:2.8.6'
+    implementation "com.airbnb.android:lottie:$lottieVersion"
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

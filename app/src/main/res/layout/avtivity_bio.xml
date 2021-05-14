@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    android:id="@+id/ln"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -64,7 +66,7 @@
                 android:fontFamily="sans-serif-medium"
                 android:textColor="#CC000000"
                 android:textSize="18sp"
-                android:text=""
+                android:text="@string/bio"
                 />
         </LinearLayout>
 

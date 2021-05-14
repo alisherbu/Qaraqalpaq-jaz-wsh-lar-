@@ -8,5 +8,5 @@
         app:showAsAction="always|collapseActionView"
 
         app:actionViewClass="androidx.appcompat.widget.SearchView"
-        android:title="Search"/>
+        android:title="@string/search"/>
 </menu>
