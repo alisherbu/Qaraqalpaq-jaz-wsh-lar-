@@ -63,24 +63,6 @@ class MainActivity : AppCompatActivity() {
         } else super.onBackPressed()
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.main, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.latin -> {
-                Toast.makeText(this,"Latin", Toast.LENGTH_SHORT).show()
-            }
-            R.id.kirill -> {
-                Toast.makeText(this, "Kirill", Toast.LENGTH_SHORT).show()
-            }
-        }
-        return true
-    }
-
-
     private fun View.replace(fragment: Fragment) {
         supportFragmentManager.beginTransaction().replace(this.id, fragment).commit()
     }

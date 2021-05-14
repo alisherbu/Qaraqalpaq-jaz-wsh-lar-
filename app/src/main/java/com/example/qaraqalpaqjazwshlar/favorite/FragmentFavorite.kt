@@ -16,12 +16,12 @@ import kotlinx.android.synthetic.main.fragment_chosen.*
 class FragmentFavorite : Fragment(R.layout.fragment_chosen), FavoriteView {
     private lateinit var presenter: FavoritePresenter
     private val adapter = PoetAdapter()
-    private var dao: PoetsDao = PoetsDatabase.getInstance(requireContext()).dao()
+    private lateinit var dao:PoetsDao
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         rvChosen.adapter = adapter
-        rvChosen.addItemDecoration(DividerItemDecoration(requireContext(),DividerItemDecoration.VERTICAL))
+        dao = PoetsDatabase.getInstance(requireContext()).dao()
         presenter = FavoritePresenter(dao, this)
         presenter.getAllFavorites()
         val intent = Intent(requireContext(), BioActivity::class.java)

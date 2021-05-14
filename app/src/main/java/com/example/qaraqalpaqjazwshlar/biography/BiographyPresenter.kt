@@ -28,7 +28,5 @@ class BiographyPresenter(private var dao:PoetsDao, var view: BiographyView, var 
         view.changeBookmark(isFavorite)
     }
 
-    fun share(text: CharSequence) {
-        view.share(text)
-    }
+
 }
