@@ -38,7 +38,7 @@ class FragmentFavorite : Fragment(R.layout.fragment_chosen), FavoriteView {
 
     override fun setData(models: List<Poets>) {
         adapter.models = models
-        if (adapter.models.isNotEmpty()) linearLayout.visibility=View.VISIBLE
+        if (adapter.models.isEmpty()) linearLayout.visibility=View.VISIBLE
         else linearLayout.visibility=View.INVISIBLE
     }
 

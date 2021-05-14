@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/rv_background">
+    android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/book_info"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="Fragment Info"
-        android:textSize="40sp" />
+        android:layout_height="wrap_content"
+        android:text="@string/book_info"
+        android:textSize="16sp"
+        android:padding="18dp"
+        android:linksClickable="true"
+        android:textColorLink="@color/black"
+        />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

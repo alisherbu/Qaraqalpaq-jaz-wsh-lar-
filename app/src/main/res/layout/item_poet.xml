@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="56dp"
-    android:layout_margin="4dp"
+    android:layout_height="48dp"
+    android:layout_margin="6dp"
+    app:cardElevation="4dp"
+    app:cardCornerRadius="6dp"
     >
     <TextView
         android:id="@+id/poetName"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="24dp"
-        android:elevation="2dp"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:text="Poet name"
+        android:text="@string/app_name"
         android:textColor="#29302E"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="@dimen/margin_standard"
+         />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

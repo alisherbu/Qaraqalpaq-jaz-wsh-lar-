@@ -5,18 +5,21 @@
     <string name="nav_header_title">Қарақалпақ жазыушылары</string>
     <string name="nav_header_subtitle">Библиографиялық  мағлыўмат</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
-    <string name="pref_alphabet_latin" translatable="false">qq</string>
-    <string name="pref_alphabet_cyrillic" translatable="false">be</string>
-    <string name="pref_alphabet_key" translatable="false">alphabet_key</string>
-    <string name="pref_alphabet_default" translatable="false">@string/pref_alphabet_latin</string>
 
     <string name="menu_poets">Жазыушылар</string>
     <string name="menu_chosen">Сайландылар</string>
     <string name="menu_info">Мағлуўмат</string>
     <string name="search">излеў</string>
     <string name="empty">Сайландылар бос</string>
-    <string name="n_n_extremum_pr_ss_n2011">\nТашкент\n«EXTREMUM PRЕSS»\n2011</string>
-    <string name="bioInfo">(Библиографиялық мағлыўмат)</string>
-    <string name="n_n">ҚАРАҚАЛПАҚСТАН\nРЕСПУБЛИКАСЫ\nЖАЗЫЎШЫЛАРЫ</string>
+    <string name="book_info">Қолыңыздағы бул китапта әдебиятымыз тарийхында белгили орнына ийе
+        талантлы сөз шеберлери менен бирге әдебиятымызға соңғы жыллары келип қосылып атырған
+        жас талант ийелериниң өмирбаяны ҳәм
+        шығармаларының библиографиялық мағлыўматлары берилди.
+        \n\nБул бағдарламаны жаратыўда <b>Зияда Бекбергенова</b> тәрепинен таярланған <b>2011-жылы</b>
+         «EXTREMUM PRESS» баспасынан басылып шыққан “Қарақалпакстан Республикасының Жазыўшылары”
+        китабынан пайдаланылды.
+        \n\nБағдарлама <a href="https://t.me/texnopos">TexnPOS</a> ИТ мектеби оқыўшылары
+        <a href="https://t.me/begimasanov">Асанов Бегим</a> ҳәм
+        <a href="https://t.me/alisherdev">Казакбаев Алишер</a> тәрепинен ислеп шығылды.
+    </string>
 </resources>
