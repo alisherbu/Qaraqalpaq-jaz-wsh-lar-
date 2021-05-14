@@ -1,12 +1,12 @@
 package com.example.qaraqalpaqjazwshlar.poets
 
 import com.example.qaraqalpaqjazwshlar.data.Poets
+import com.example.qaraqalpaqjazwshlar.data.PoetsDao
 import com.example.qaraqalpaqjazwshlar.data.PoetsDatabase
 import java.util.*
 import kotlin.collections.ArrayList
 
-class PoetPresenter(fragment: FragmentPoets, var view: PoetView) {
-    private val dao = PoetsDatabase.getInstance(fragment.requireContext()).dao()
+class PoetPresenter(private var dao: PoetsDao, var view: PoetView) {
     private lateinit var poetList: List<Poets>
     fun getAllPoets() {
         poetList = dao.getAllPoetsAndId()
@@ -15,14 +15,10 @@ class PoetPresenter(fragment: FragmentPoets, var view: PoetView) {
 
     fun filter(text: String) {
         val filteredNames = ArrayList<Poets>()
-
         poetList.filterTo(filteredNames) {
             it.poetName!!.toLowerCase(Locale.ROOT).contains(text.toKiril().toLowerCase(Locale.ROOT))
         }
         view.filteredNames(filteredNames)
-    }
-    fun startActivity(){
-        view.startActivity()
     }
     private fun String.toKiril():String{
         var s=""

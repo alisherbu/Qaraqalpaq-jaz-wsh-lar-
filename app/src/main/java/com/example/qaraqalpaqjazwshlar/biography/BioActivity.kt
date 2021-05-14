@@ -2,17 +2,22 @@ package com.example.qaraqalpaqjazwshlar.biography
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.Html
 import android.view.Menu
 import android.view.MenuItem
 import android.view.animation.AnimationUtils
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.text.HtmlCompat
 import com.example.qaraqalpaqjazwshlar.R
+import com.example.qaraqalpaqjazwshlar.data.PoetsDatabase
 import kotlinx.android.synthetic.main.avtivity_bio.*
 
 class BioActivity : AppCompatActivity(), BiographyView {
     private var favoriteItem: MenuItem? = null
     private lateinit var presenter: BiographyPresenter
-
+    private val dao = PoetsDatabase.getInstance(this).dao()
+    var toast=false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.avtivity_bio)
@@ -30,7 +35,7 @@ class BioActivity : AppCompatActivity(), BiographyView {
         tvBio.startAnimation(fromBottom)
 
         val id = intent.getIntExtra("id", 1)
-        presenter = BiographyPresenter(this, this, id)
+        presenter = BiographyPresenter(dao, this, id)
         toolbar_bio.setTitle(R.string.menu_poets)
         toolbar_bio.title = getString(R.string.menu_poets)
         setSupportActionBar(toolbar_bio)
@@ -67,12 +72,19 @@ class BioActivity : AppCompatActivity(), BiographyView {
     override fun getBiography(biography: String, poetName: String, lifeSpan: String) {
         tvPoetName.text = poetName
         tvPoetLife.text = lifeSpan
-        tvBio.text = biography
+        tvBio.text = HtmlCompat.fromHtml(biography,HtmlCompat.FROM_HTML_MODE_COMPACT)
     }
-
     override fun changeBookmark(isPressed: Boolean) {
-        if (isPressed) favoriteItem!!.setIcon(R.drawable.ic_baseline_bookmark_24)
-        else favoriteItem!!.setIcon(R.drawable.ic_baseline_bookmark_border_24)
+
+        if (isPressed){
+           if (toast) Toast.makeText(this,"Saylandilarga qosildi",Toast.LENGTH_SHORT).show()
+            favoriteItem!!.setIcon(R.drawable.ic_baseline_bookmark_24)
+        }
+        else{
+           if (toast) Toast.makeText(this,"Saylandilardan oshirildi",Toast.LENGTH_SHORT).show()
+            favoriteItem!!.setIcon(R.drawable.ic_baseline_bookmark_border_24)
+        }
+        toast=true
     }
 
     override fun share(text: CharSequence) {

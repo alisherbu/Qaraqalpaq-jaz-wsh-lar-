@@ -3,14 +3,10 @@ package com.example.qaraqalpaqjazwshlar.favorite
 import com.example.qaraqalpaqjazwshlar.data.PoetsDao
 import com.example.qaraqalpaqjazwshlar.data.PoetsDatabase
 
-class FavoritePresenter(fragment: FragmentFavorite, var view: FavoriteView) {
-    private var dao: PoetsDao = PoetsDatabase.getInstance(fragment.requireContext()).dao()
+class FavoritePresenter(private var dao:PoetsDao, var view: FavoriteView) {
 
     fun getAllFavorites() {
         view.setData(dao.getAllFavorites())
     }
 
-    fun startActivity() {
-        view.startActivity()
-    }
 }

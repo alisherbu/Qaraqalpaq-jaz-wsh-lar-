@@ -8,20 +8,27 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.qaraqalpaqjazwshlar.R
 import com.example.qaraqalpaqjazwshlar.biography.BioActivity
 import com.example.qaraqalpaqjazwshlar.data.Poets
+import com.example.qaraqalpaqjazwshlar.data.PoetsDao
+import com.example.qaraqalpaqjazwshlar.data.PoetsDatabase
 import com.example.qaraqalpaqjazwshlar.poets.PoetAdapter
 import kotlinx.android.synthetic.main.fragment_chosen.*
 
 class FragmentFavorite : Fragment(R.layout.fragment_chosen), FavoriteView {
     private lateinit var presenter: FavoritePresenter
     private val adapter = PoetAdapter()
+    private var dao: PoetsDao = PoetsDatabase.getInstance(requireContext()).dao()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         rvChosen.adapter = adapter
         rvChosen.addItemDecoration(DividerItemDecoration(requireContext(),DividerItemDecoration.VERTICAL))
-        presenter = FavoritePresenter(this, this)
+        presenter = FavoritePresenter(dao, this)
         presenter.getAllFavorites()
-        presenter.startActivity()
+        val intent = Intent(requireContext(), BioActivity::class.java)
+        adapter.setOnItemClickListener { item, _, id ->
+            intent.putExtra("id", id)
+            startActivity(intent)
+        }
     }
 
     override fun onResume() {
@@ -35,11 +42,4 @@ class FragmentFavorite : Fragment(R.layout.fragment_chosen), FavoriteView {
         else linearLayout.visibility=View.INVISIBLE
     }
 
-    override fun startActivity() {
-        val intent = Intent(requireContext(), BioActivity::class.java)
-        adapter.setOnItemClickListener { item, _, id ->
-            intent.putExtra("id", id)
-            startActivity(intent)
-        }
-    }
 }
