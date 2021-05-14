@@ -6,34 +6,16 @@
     android:background="@drawable/rv_background">
 
 
-        <androidx.appcompat.widget.AppCompatEditText
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:id="@+id/etSearch"
-            android:layout_width="0dp"
-            android:layout_height="56dp"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/search_background"
-            android:drawableStart="@drawable/ic_baseline_search_24"
-            android:hint="@string/search"
-            android:inputType="text"
-            android:padding="8dp"
-            android:textSize="18sp" />
-
 
         <com.mlsdev.animatedrv.AnimatedRecyclerView
             android:id="@+id/recyclerView"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             app:animationDuration="600"
             app:layoutManagerOrientation="vertical"
             app:layoutManagerReverse="false"
             app:layoutManagerType="linear"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/etSearch"
-            app:layout_constraintStart_toStartOf="@id/etSearch"
-            app:layout_constraintEnd_toEndOf="@id/etSearch"
+            android:layout_marginHorizontal="@dimen/margin_standard"
+
             />
 </androidx.constraintlayout.widget.ConstraintLayout>
