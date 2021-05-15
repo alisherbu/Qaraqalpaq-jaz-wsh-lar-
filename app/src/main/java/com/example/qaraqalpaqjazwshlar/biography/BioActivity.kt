@@ -1,6 +1,7 @@
 package com.example.qaraqalpaqjazwshlar.biography
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -21,8 +22,6 @@ class BioActivity : AppCompatActivity(), BiographyView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.avtivity_bio)
 
-        val fromTop = AnimationUtils.loadAnimation(this, R.anim.alpha_from_in)
-        app_bar_bio.startAnimation(fromTop)
         val fromLeft = AnimationUtils.loadAnimation(this, R.anim.from_left)
         fromLeft.startOffset = 300
         tvPoetName.startAnimation(fromLeft)
@@ -36,13 +35,10 @@ class BioActivity : AppCompatActivity(), BiographyView {
         val id = intent.getIntExtra("id", 1)
         presenter = BiographyPresenter(dao, this, id)
         presenter.getBiography()
-        toolbar_bio.title = getString(R.string.menu_poets)
         setSupportActionBar(toolbar_bio)
 
-        supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_24)
+        supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_baseline_close_24)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -65,7 +61,7 @@ class BioActivity : AppCompatActivity(), BiographyView {
                 sharingIntent.type = "text/plain"
                 sharingIntent.putExtra(Intent.EXTRA_TEXT, tvBio.text)
                 sharingIntent.putExtra(Intent.EXTRA_SUBJECT, "Subject")
-                startActivity(Intent.createChooser(sharingIntent, "Bólisiw"))
+                startActivity(Intent.createChooser(sharingIntent, "Бөлисиў"))
             }
             else -> return false
         }
@@ -79,12 +75,17 @@ class BioActivity : AppCompatActivity(), BiographyView {
     }
 
     override fun changeBookmark(isPressed: Boolean) {
-
         if (isPressed) {
-            if (toast) Snackbar.make(ln, "Saylandılarǵa qosıldı", Snackbar.LENGTH_SHORT).show()
+            if (toast) Snackbar.make(ln, "Сайландыларға қосылды", Snackbar.LENGTH_SHORT)
+                .setBackgroundTint(Color.BLACK)
+                .setTextColor(Color.WHITE)
+                .show()
             favoriteItem!!.setIcon(R.drawable.ic_baseline_bookmark_24)
         } else {
-            if (toast) Snackbar.make(ln, "Saylandılardan óshirildi", Snackbar.LENGTH_SHORT).show()
+            if (toast) Snackbar.make(ln, "Сайландылардан өширилди", Snackbar.LENGTH_SHORT)
+                .setBackgroundTint(Color.BLACK)
+                .setTextColor(Color.WHITE)
+                .show()
             favoriteItem!!.setIcon(R.drawable.ic_baseline_bookmark_border_24)
         }
         toast = true

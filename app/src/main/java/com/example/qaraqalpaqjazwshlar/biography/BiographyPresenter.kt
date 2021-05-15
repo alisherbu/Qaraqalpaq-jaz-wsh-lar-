@@ -2,18 +2,17 @@ package com.example.qaraqalpaqjazwshlar.biography
 
 import com.example.qaraqalpaqjazwshlar.data.PoetsDao
 
-class BiographyPresenter(private var dao:PoetsDao, var view: BiographyView, var id: Int) {
+class BiographyPresenter(private var dao: PoetsDao, var view: BiographyView, var id: Int) {
     private var isFavorite = dao.getStatus(id) == 1
     fun setBookmark() {
         view.changeBookmark(isFavorite)
     }
 
     fun getBiography() {
-        val biography = dao.getBiographyById(id)
         view.getBiography(
-               biography,
-                dao.getPoetNameById(id),
-                dao.getLifeSpanById(id)
+            dao.getBiographyById(id),
+            dao.getPoetNameById(id),
+            dao.getLifeSpanById(id)
         )
     }
 
@@ -27,6 +26,4 @@ class BiographyPresenter(private var dao:PoetsDao, var view: BiographyView, var 
         }
         view.changeBookmark(isFavorite)
     }
-
-
 }

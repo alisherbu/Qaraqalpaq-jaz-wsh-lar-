@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_poet_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.DayNight">
-        <activity android:name=".Settings">
+        <activity android:name=".settings.SettingsFragment"
+            tools:ignore="Instantiatable">
 
         </activity>
         <activity

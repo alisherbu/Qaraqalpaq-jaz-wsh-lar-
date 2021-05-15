@@ -9,13 +9,13 @@ import com.example.qaraqalpaqjazwshlar.R
 import com.example.qaraqalpaqjazwshlar.data.Poets
 import kotlinx.android.synthetic.main.item_poet.view.*
 
-class PoetAdapter: RecyclerView.Adapter<PoetAdapter.PoetListViewHolder>() {
+class PoetAdapter : RecyclerView.Adapter<PoetAdapter.PoetListViewHolder>() {
     inner class PoetListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        fun populateModel(model: Poets, pos: Int) {
+        fun populateModel(model: Poets) {
             itemView.poetName.text = model.poetName
             itemView.setOnClickListener {
-                onCLick.invoke(it, pos, model.id)
+                onCLick.invoke(model.id)
             }
         }
     }
@@ -25,11 +25,11 @@ class PoetAdapter: RecyclerView.Adapter<PoetAdapter.PoetListViewHolder>() {
             field = value
             notifyDataSetChanged()
         }
-    var onCLick: (itemView: View, pos: Int, poetName: Int) -> Unit = { _, _, _ ->
+    var onCLick: (id: Int) -> Unit = { _ ->
 
     }
 
-    fun setOnItemClickListener(onCLick: (itemView: View, pos: Int, id: Int) -> Unit) {
+    fun setOnItemClickListener(onCLick: (id: Int) -> Unit) {
         this.onCLick = onCLick
     }
 
@@ -40,9 +40,9 @@ class PoetAdapter: RecyclerView.Adapter<PoetAdapter.PoetListViewHolder>() {
 
     override fun onBindViewHolder(holder: PoetListViewHolder, position: Int) {
 
-        val animation=AnimationUtils.loadAnimation(holder.itemView.context,R.anim.slide_in_row)
+        val animation = AnimationUtils.loadAnimation(holder.itemView.context, R.anim.slide_in_row)
         holder.itemView.startAnimation(animation)
-        holder.populateModel(models[position], position)
+        holder.populateModel(models[position])
     }
 
     override fun getItemCount() = models.size

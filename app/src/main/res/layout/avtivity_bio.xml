@@ -19,7 +19,8 @@
             android:id="@+id/toolbar_bio"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="#FF0061FD"
+            android:background="@color/toolbar_color"
+            app:title="@string/menu_poets"
             app:popupTheme="@style/Theme.QaraqalpaqJazıwshıları.PopupOverlay" />
 
     </com.google.android.material.appbar.AppBarLayout>

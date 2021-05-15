@@ -2,7 +2,6 @@ package com.example.qaraqalpaqjazwshlar.poets
 
 import com.example.qaraqalpaqjazwshlar.data.Poets
 import com.example.qaraqalpaqjazwshlar.data.PoetsDao
-import com.example.qaraqalpaqjazwshlar.data.PoetsDatabase
 import java.util.*
 import kotlin.collections.ArrayList
 
