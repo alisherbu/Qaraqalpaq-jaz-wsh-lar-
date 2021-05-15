@@ -41,14 +41,6 @@
             android:layout_height="wrap_content"
             android:text="@string/nav_header_subtitle" />
     </LinearLayout>
-    <ImageView
-        android:id="@+id/night"
-        android:layout_weight="1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_baseline_nights_stay_24"
-        android:layout_gravity="center"
-        />
 
 </LinearLayout>
 

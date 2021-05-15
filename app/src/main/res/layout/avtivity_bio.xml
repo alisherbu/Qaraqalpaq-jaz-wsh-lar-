@@ -64,7 +64,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginBottom="@dimen/margin_standard"
                 android:fontFamily="sans-serif-medium"
-                android:textColor="#CC000000"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 android:text="@string/bio"
                 />

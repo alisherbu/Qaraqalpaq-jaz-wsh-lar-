@@ -5,7 +5,9 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import com.example.qaraqalpaqjazwshlar.R
+import com.example.qaraqalpaqjazwshlar.Settings
 import com.example.qaraqalpaqjazwshlar.main.MainActivity
 
 @Suppress("DEPRECATION")
