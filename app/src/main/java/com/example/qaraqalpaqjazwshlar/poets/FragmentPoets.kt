@@ -9,6 +9,7 @@ import com.example.qaraqalpaqjazwshlar.biography.BioActivity
 import com.example.qaraqalpaqjazwshlar.data.Poets
 import com.example.qaraqalpaqjazwshlar.data.PoetsDao
 import com.example.qaraqalpaqjazwshlar.data.PoetsDatabase
+import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.fragment_poets_list.*
 
 class FragmentPoets : Fragment(R.layout.fragment_poets_list), PoetView {

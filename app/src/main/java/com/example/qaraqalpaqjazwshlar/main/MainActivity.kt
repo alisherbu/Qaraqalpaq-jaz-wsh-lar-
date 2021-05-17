@@ -36,14 +36,14 @@ class MainActivity : AppCompatActivity() {
     private val fragmentSettings = SettingsFragment()
     private lateinit var menuItem: MenuItem
     private lateinit var preferences: SharedPreferences
-
     override fun onCreate(savedInstanceState: Bundle?) {
+        preferences = getSharedPreferences(FILE_SETTINGS, Context.MODE_PRIVATE)
+        if (preferences.getBoolean(KEY_NIGHT_MODE, false)) {
+            AppCompatDelegate.setDefaultNightMode(DAY_NIGHT)
+        }
+        else AppCompatDelegate.setDefaultNightMode(DAY_LIGHT)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        preferences = getSharedPreferences(FILE_SETTINGS, Context.MODE_PRIVATE)
-        if (preferences.getBoolean(KEY_NIGHT_MODE, false))
-            AppCompatDelegate.setDefaultNightMode(DAY_NIGHT)
-        else AppCompatDelegate.setDefaultNightMode(DAY_LIGHT)
 
         setSupportActionBar(toolbar)
 
@@ -108,18 +108,17 @@ class MainActivity : AppCompatActivity() {
                 return false
             }
         })
-        when (val pos = preferences.getInt("open_fragment", 1)) {
-            1 -> fragmentContainer.replace(fragmentPoets, pos)
-            2 -> fragmentContainer.replace(fragmentChosen, pos)
-            3 -> fragmentContainer.replace(fragmentInfo, pos)
-            4 -> fragmentContainer.replace(fragmentSettings, pos)
-        }
+        if (preferences.getBoolean("open",false))
+            fragmentContainer.replace(fragmentSettings,4)
+        else
+            fragmentContainer.replace(fragmentPoets,1)
+
+        preferences.edit().putBoolean("open",false).apply()
         return super.onCreateOptionsMenu(menu)
     }
 
     private fun View.replace(fragment: Fragment, position: Int) {
         supportFragmentManager.beginTransaction().replace(this.id, fragment).commit()
-        preferences.edit().putInt("open_fragment", position).apply()
         menuItem.isVisible = false
         when (position) {
             1 -> {
