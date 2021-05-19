@@ -9,4 +9,6 @@
     <color name="white">#FF000000</color>
     <color name="toolbar_color">#272626</color>
     <color name="item_background">#282828</color>
+    <color name="back">#FF000000</color>
+    <color name="back_bio">#1F3334</color>
 </resources>

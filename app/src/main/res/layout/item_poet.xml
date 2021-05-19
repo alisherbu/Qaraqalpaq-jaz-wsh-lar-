@@ -4,20 +4,18 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="6dp"
-    app:cardElevation="4dp"
     app:cardCornerRadius="8dp"
-    android:backgroundTint="@color/item_background"
-    >
+    app:cardElevation="4dp">
+
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/poetName"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/app_name"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
         android:layout_gravity="center"
         android:layout_margin="@dimen/margin_standard"
-         />
+        android:text="@string/app_name"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
 </com.google.android.material.card.MaterialCardView>

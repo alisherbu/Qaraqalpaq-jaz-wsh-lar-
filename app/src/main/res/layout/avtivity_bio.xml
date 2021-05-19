@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:id="@+id/ln"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ln"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fon"
+    android:background="@color/back_bio"
     android:orientation="vertical">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -19,9 +18,8 @@
             android:id="@+id/toolbar_bio"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/toolbar_color"
-            app:title="@string/menu_poets"
-            app:popupTheme="@style/Theme.QaraqalpaqJazıwshıları.PopupOverlay" />
+            app:popupTheme="@style/Theme.QaraqalpaqJazıwshıları.PopupOverlay"
+            app:title="@string/menu_poets" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -43,7 +41,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_standard"
                 android:gravity="center"
-                android:text="Аббазов Сағыйдулла"
                 android:textColor="@color/black"
                 android:textSize="26sp"
                 android:textStyle="bold" />
@@ -52,23 +49,19 @@
                 android:id="@+id/tvPoetLife"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:gravity="center"
-                android:text="1930-1990"
                 android:textColor="@color/black"
                 android:textSize="22sp"
-                android:textStyle="bold"
-                android:layout_marginTop="8dp"/>
+                android:textStyle="bold" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tvBio"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="@dimen/margin_standard"
-                android:fontFamily="sans-serif-medium"
                 android:textColor="@color/black"
-                android:textSize="18sp"
-                android:text="@string/bio"
-                />
+                android:textSize="18sp" />
         </LinearLayout>
 
     </ScrollView>

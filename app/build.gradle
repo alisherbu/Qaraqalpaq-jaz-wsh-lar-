@@ -7,10 +7,10 @@ plugins {
 
 android {
     compileSdkVersion 30
-    buildToolsVersion "30.0.1"
+    buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.example.qaraqalpaqjazwshlar"
+        applicationId "uz.texnopos.jaziwshilar"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1

@@ -6,21 +6,15 @@
     <group android:checkableBehavior="all">
         <item
             android:id="@+id/nav_poets"
-            android:title="@string/menu_poets"
             android:icon="@drawable/ic_baseline_menu_book_24"
-           />
+            android:title="@string/menu_poets" />
         <item
             android:id="@+id/nav_chosen"
-            android:title="@string/menu_chosen"
-            android:icon="@drawable/ic_baseline_bookmarks_24"/>
+            android:icon="@drawable/ic_baseline_bookmarks_24"
+            android:title="@string/menu_chosen" />
         <item
             android:id="@+id/nav_info"
-            android:title="@string/menu_info"
             android:icon="@drawable/ic_baseline_info_24"
-           />
-        <item
-            android:id="@+id/nav_settings"
-            android:title="@string/menu_settings"
-            android:icon="@drawable/ic_baseline_settings_24"/>
+            android:title="@string/menu_info" />
     </group>
 </menu>

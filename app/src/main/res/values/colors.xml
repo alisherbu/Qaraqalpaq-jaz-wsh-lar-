@@ -9,5 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="toolbar_color">#FF0061FD</color>
     <color name="item_background">#FFFFFFFF</color>
+    <color name="back">#EDEDED</color>
+    <color name="back_bio">#F6DC9E</color>
 
 </resources>
