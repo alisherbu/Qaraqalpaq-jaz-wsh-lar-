@@ -13,6 +13,11 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import uz.texnopos.jaziwshilar.favorite.FragmentFavorite
 import uz.texnopos.jaziwshilar.info.FragmentInfo
 import uz.texnopos.jaziwshilar.poets.FragmentPoets
@@ -31,6 +36,7 @@ class MainActivity : AppCompatActivity() {
     private val fragmentInfo = FragmentInfo()
     private lateinit var menuItem: MenuItem
     private lateinit var preferences: SharedPreferences
+    private lateinit var appBarConfiguration: AppBarConfiguration
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -45,18 +51,33 @@ class MainActivity : AppCompatActivity() {
         )
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
+//TODO
+        val navController=findNavController(R.id.nav_host_fragment_content_main)
+        appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow
+            ), drawer_layout
+        )
+        setupActionBarWithNavController(navController, appBarConfiguration)
 
-        nav_view.setNavigationItemSelectedListener {
-            menuItem.isVisible = false
-            when (it.itemId) {
-                R.id.nav_poets -> fragmentContainer.replace(fragmentPoets, 1)
-                R.id.nav_chosen -> fragmentContainer.replace(fragmentChosen, 2)
-                R.id.nav_info -> fragmentContainer.replace(fragmentInfo, 3)
-                else -> return@setNavigationItemSelectedListener false
-            }
-            drawer_layout.closeDrawer(GravityCompat.START)
-            return@setNavigationItemSelectedListener true
-        }
+        nav_view.setupWithNavController(navController)
+//        nav_view.setNavigationItemSelectedListener {
+//            menuItem.isVisible = false
+//            when (it.itemId) {
+//                R.id.nav_poets -> fragmentContainer.replace(fragmentPoets, 1)
+//                R.id.nav_chosen -> fragmentContainer.replace(fragmentChosen, 2)
+//                R.id.nav_info -> fragmentContainer.replace(fragmentInfo, 3)
+//                else -> return@setNavigationItemSelectedListener false
+//            }
+//            drawer_layout.closeDrawer(GravityCompat.START)
+//            return@setNavigationItemSelectedListener true
+//        }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        val navController=findNavController(R.id.nav_host_fragment_content_main)
+
+        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
     override fun onBackPressed() {
