@@ -8,7 +8,7 @@
         android:icon="@mipmap/ic_launcher_poet"
         android:roundIcon="@mipmap/ic_launcher_poet_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MaterialComponents.DayNight">
+        android:theme="@style/Theme.QaraqalpaqJazıwshıları.NoActionBar">
         <activity
             android:name="uz.texnopos.jaziwshilar.splash.SplashScreenActivity"
             android:screenOrientation="portrait"

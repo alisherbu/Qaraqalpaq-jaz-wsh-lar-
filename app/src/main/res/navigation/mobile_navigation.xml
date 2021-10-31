@@ -3,23 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_poets">
 
     <fragment
-        android:id="@+id/nav_home"
+        android:id="@+id/nav_poets"
         android:name="uz.texnopos.jaziwshilar.poets.FragmentPoets"
         android:label="@string/menu_poets"
-        tools:layout="@layout/fragment_poets_list" />
+        tools:layout="@layout/fragment_poets_list"
+        />
 
     <fragment
-        android:id="@+id/nav_gallery"
+        android:id="@+id/nav_chosen"
         android:name="uz.texnopos.jaziwshilar.favorite.FragmentFavorite"
         android:label="@string/menu_chosen"
         tools:layout="@layout/fragment_chosen" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
+        android:id="@+id/nav_info"
         android:name="uz.texnopos.jaziwshilar.info.FragmentInfo"
         android:label="@string/menu_info"
-        tools:layout="@layout/fragment_info" />
+        tools:layout="@layout/fragment_info" >
+
+    </fragment>
 </navigation>

@@ -16,7 +16,7 @@ class BiographyPresenter(private var dao: PoetsDao, var view: BiographyView, var
         )
     }
 
-    fun changeBookmark() {
+    fun  changeBookmark() {
         isFavorite = !isFavorite
         if (isFavorite) {
             dao.setStatus(id, 1)

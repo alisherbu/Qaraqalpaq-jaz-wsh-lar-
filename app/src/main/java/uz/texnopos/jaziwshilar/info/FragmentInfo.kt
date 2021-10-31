@@ -3,7 +3,9 @@ package uz.texnopos.jaziwshilar.info
 import android.os.Bundle
 import android.text.method.LinkMovementMethod
 import android.view.View
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_info.*
 import uz.texnopos.jaziwshilar.R
 

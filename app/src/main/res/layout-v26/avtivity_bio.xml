@@ -41,6 +41,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_standard"
                 android:gravity="center"
+                android:justificationMode="inter_word"
                 android:textColor="@color/black"
                 android:textSize="26sp"
                 android:textStyle="bold" />
