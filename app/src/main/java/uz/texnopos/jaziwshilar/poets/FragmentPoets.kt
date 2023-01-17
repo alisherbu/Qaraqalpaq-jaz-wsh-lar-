@@ -7,14 +7,16 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import androidx.fragment.app.Fragment
-import kotlinx.android.synthetic.main.fragment_poets_list.*
 import uz.texnopos.jaziwshilar.R
 import uz.texnopos.jaziwshilar.biography.BioActivity
 import uz.texnopos.jaziwshilar.data.PoetEntity
 import uz.texnopos.jaziwshilar.data.PoetsDao
 import uz.texnopos.jaziwshilar.data.PoetsDatabase
+import uz.texnopos.jaziwshilar.databinding.FragmentPoetsListBinding
 
 class FragmentPoets : Fragment(R.layout.fragment_poets_list), PoetView {
+    private lateinit var binding: FragmentPoetsListBinding
+
     companion object {
         const val ID = "id"
     }
@@ -30,10 +32,11 @@ class FragmentPoets : Fragment(R.layout.fragment_poets_list), PoetView {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding = FragmentPoetsListBinding.bind(view)
         dao = PoetsDatabase.getInstance(requireContext()).dao()
         presenter = PoetPresenter(dao, this)
         presenter.getAllPoets()
-        recyclerView.adapter = adapter
+        binding.recyclerView.adapter = adapter
 
         val intent = Intent(requireContext(), BioActivity::class.java)
         adapter.setOnItemClickListener { id ->

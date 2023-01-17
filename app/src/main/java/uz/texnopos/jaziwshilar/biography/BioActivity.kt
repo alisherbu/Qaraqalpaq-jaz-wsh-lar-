@@ -9,33 +9,34 @@ import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.text.HtmlCompat
 import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.avtivity_bio.*
 import uz.texnopos.jaziwshilar.R
 import uz.texnopos.jaziwshilar.data.PoetsDatabase
+import uz.texnopos.jaziwshilar.databinding.ActivityBioBinding
 
-class BioActivity : AppCompatActivity(), BiographyView {
+class BioActivity : AppCompatActivity(R.layout.activity_bio), BiographyView {
+    private lateinit var binding: ActivityBioBinding
     private var favoriteItem: MenuItem? = null
     private lateinit var presenter: BiographyPresenter
     private val dao = PoetsDatabase.getInstance(this).dao()
     private var toast = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.avtivity_bio)
+        binding = ActivityBioBinding.inflate(layoutInflater)
 
         val fromLeft = AnimationUtils.loadAnimation(this, R.anim.from_left)
         fromLeft.startOffset = 300
-        tvPoetName.startAnimation(fromLeft)
+        binding.tvPoetName.startAnimation(fromLeft)
         val fadeFromIn = AnimationUtils.loadAnimation(this, R.anim.fade_from_in)
         fadeFromIn.startOffset = 800
-        tvPoetLife.startAnimation(fadeFromIn)
+        binding.tvPoetLife.startAnimation(fadeFromIn)
         val fromBottom = AnimationUtils.loadAnimation(this, R.anim.from_bottom)
         fromBottom.startOffset = 1000
-        tvBio.startAnimation(fromBottom)
+        binding.tvBio.startAnimation(fromBottom)
 
         val id = intent.getIntExtra("id", 1)
         presenter = BiographyPresenter(dao, this, id)
         presenter.getBiography()
-        setSupportActionBar(toolbar_bio)
+        setSupportActionBar(binding.toolbar)
 
         supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_24)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
@@ -59,7 +60,7 @@ class BioActivity : AppCompatActivity(), BiographyView {
             R.id.share -> {
                 val sharingIntent = Intent(Intent.ACTION_SEND)
                 sharingIntent.type = "text/plain"
-                sharingIntent.putExtra(Intent.EXTRA_TEXT, tvBio.text)
+                sharingIntent.putExtra(Intent.EXTRA_TEXT, binding.tvBio.text)
                 sharingIntent.putExtra(Intent.EXTRA_SUBJECT, "Subject")
                 startActivity(Intent.createChooser(sharingIntent, "Бөлисиў"))
             }
@@ -69,20 +70,20 @@ class BioActivity : AppCompatActivity(), BiographyView {
     }
 
     override fun getBiography(biography: String, poetName: String, lifeSpan: String) {
-        tvPoetName.text = poetName
-        tvPoetLife.text = lifeSpan
-        tvBio.text = HtmlCompat.fromHtml(biography, HtmlCompat.FROM_HTML_MODE_COMPACT)
+        binding.tvPoetName.text = poetName
+        binding.tvPoetLife.text = lifeSpan
+        binding.tvBio.text = HtmlCompat.fromHtml(biography, HtmlCompat.FROM_HTML_MODE_COMPACT)
     }
 
     override fun changeBookmark(isPressed: Boolean) {
         if (isPressed) {
-            if (toast) Snackbar.make(ln, "Сайландыларға қосылды", Snackbar.LENGTH_SHORT)
+            if (toast) Snackbar.make(binding.ln, "Сайландыларға қосылды", Snackbar.LENGTH_SHORT)
                 .setBackgroundTint(Color.BLACK)
                 .setTextColor(Color.WHITE)
                 .show()
             favoriteItem!!.setIcon(R.drawable.ic_baseline_bookmark_24)
         } else {
-            if (toast) Snackbar.make(ln, "Сайландылардан өширилди", Snackbar.LENGTH_SHORT)
+            if (toast) Snackbar.make(binding.ln, "Сайландылардан өширилди", Snackbar.LENGTH_SHORT)
                 .setBackgroundTint(Color.BLACK)
                 .setTextColor(Color.WHITE)
                 .show()

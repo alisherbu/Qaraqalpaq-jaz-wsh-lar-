@@ -9,11 +9,10 @@ import androidx.appcompat.app.AppCompatActivity
 import uz.texnopos.jaziwshilar.R
 import uz.texnopos.jaziwshilar.main.MainActivity
 
-class SplashScreenActivity : AppCompatActivity() {
+class SplashScreenActivity : AppCompatActivity(R.layout.splash_activity) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.splash_activity)
         window.setFlags(
             WindowManager.LayoutParams.ANIMATION_CHANGED,
             WindowManager.LayoutParams.ANIMATION_CHANGED

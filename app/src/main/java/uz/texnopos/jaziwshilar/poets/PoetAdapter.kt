@@ -1,19 +1,18 @@
 package uz.texnopos.jaziwshilar.poets
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.item_poet.view.*
-import uz.texnopos.jaziwshilar.R
 import uz.texnopos.jaziwshilar.data.PoetEntity
+import uz.texnopos.jaziwshilar.databinding.ItemPoetBinding
 
 class PoetAdapter : RecyclerView.Adapter<PoetAdapter.PoetListViewHolder>() {
-    inner class PoetListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class PoetListViewHolder(private val binding: ItemPoetBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
-        fun populateModel(model: PoetEntity) {
-            itemView.poetName.text = model.poetName
-            itemView.setOnClickListener {
+        fun bind(model: PoetEntity) {
+            binding.poetName.text = model.poetName
+            binding.root.setOnClickListener {
                 onCLick.invoke(model.id)
             }
         }
@@ -32,12 +31,12 @@ class PoetAdapter : RecyclerView.Adapter<PoetAdapter.PoetListViewHolder>() {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PoetListViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_poet, parent, false)
-        return PoetListViewHolder(view)
+        val binding = ItemPoetBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return PoetListViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: PoetListViewHolder, position: Int) {
-        holder.populateModel(models[position])
+        holder.bind(models[position])
     }
 
     override fun getItemCount() = models.size
