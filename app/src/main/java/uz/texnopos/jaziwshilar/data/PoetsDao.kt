@@ -1,6 +1,7 @@
 package uz.texnopos.jaziwshilar.data
 
-import androidx.room.*
+import androidx.room.Dao
+import androidx.room.Query
 
 @Dao
 interface PoetsDao {
@@ -24,8 +25,8 @@ interface PoetsDao {
     fun setDate(id: Int, currentTime: Long)
 
     @Query("SELECT id,poetName FROM jaziwshilar WHERE isFavorite=1 ORDER by date DESC")
-    fun getAllFavorites(): List<Poets>
+    fun getAllFavorites(): List<PoetEntity>
 
     @Query("SELECT id , poetName from jaziwshilar")
-    fun getAllPoetsAndId(): List<Poets>
+    fun getAllPoetsAndId(): List<PoetEntity>
 }

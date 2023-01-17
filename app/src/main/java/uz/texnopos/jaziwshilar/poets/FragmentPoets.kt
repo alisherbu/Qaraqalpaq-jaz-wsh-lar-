@@ -7,11 +7,10 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import androidx.fragment.app.Fragment
-import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.fragment_poets_list.*
 import uz.texnopos.jaziwshilar.R
 import uz.texnopos.jaziwshilar.biography.BioActivity
-import uz.texnopos.jaziwshilar.data.Poets
+import uz.texnopos.jaziwshilar.data.PoetEntity
 import uz.texnopos.jaziwshilar.data.PoetsDao
 import uz.texnopos.jaziwshilar.data.PoetsDatabase
 
@@ -43,11 +42,11 @@ class FragmentPoets : Fragment(R.layout.fragment_poets_list), PoetView {
         }
     }
 
-    override fun setData(models: List<Poets>) {
+    override fun setData(models: List<PoetEntity>) {
         adapter.models = models
     }
 
-    override fun filteredNames(list: List<Poets>) {
+    override fun filteredNames(list: List<PoetEntity>) {
         adapter.models = list
     }
 

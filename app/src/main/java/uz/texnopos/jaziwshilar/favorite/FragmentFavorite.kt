@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_chosen.*
 import uz.texnopos.jaziwshilar.R
 import uz.texnopos.jaziwshilar.biography.BioActivity
-import uz.texnopos.jaziwshilar.data.Poets
+import uz.texnopos.jaziwshilar.data.PoetEntity
 import uz.texnopos.jaziwshilar.data.PoetsDao
 import uz.texnopos.jaziwshilar.data.PoetsDatabase
 import uz.texnopos.jaziwshilar.poets.FragmentPoets.Companion.ID
@@ -36,7 +36,7 @@ class FragmentFavorite : Fragment(R.layout.fragment_chosen), FavoriteView {
         super.onResume()
     }
 
-    override fun setData(models: List<Poets>) {
+    override fun setData(models: List<PoetEntity>) {
         adapter.models = models
         if (adapter.models.isEmpty()) linearLayout.visibility = View.VISIBLE
         else linearLayout.visibility = View.INVISIBLE

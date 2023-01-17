@@ -1,9 +1,11 @@
 package uz.texnopos.jaziwshilar.data
 
-import androidx.room.*
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
 @Entity(tableName = "jaziwshilar")
-data class Poets(
+data class PoetEntity(
     @PrimaryKey val id: Int,
     @ColumnInfo(name = "poetName")
     val poetName: String?,
