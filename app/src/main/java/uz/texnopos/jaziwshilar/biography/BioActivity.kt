@@ -8,10 +8,10 @@ import android.view.MenuItem
 import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.text.HtmlCompat
-import uz.texnopos.jaziwshilar.data.PoetsDatabase
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.avtivity_bio.*
 import uz.texnopos.jaziwshilar.R
+import uz.texnopos.jaziwshilar.data.PoetsDatabase
 
 class BioActivity : AppCompatActivity(), BiographyView {
     private var favoriteItem: MenuItem? = null
@@ -90,5 +90,4 @@ class BioActivity : AppCompatActivity(), BiographyView {
         }
         toast = true
     }
-
 }

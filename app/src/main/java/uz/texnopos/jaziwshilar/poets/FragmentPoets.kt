@@ -14,12 +14,12 @@ import uz.texnopos.jaziwshilar.biography.BioActivity
 import uz.texnopos.jaziwshilar.data.Poets
 import uz.texnopos.jaziwshilar.data.PoetsDao
 import uz.texnopos.jaziwshilar.data.PoetsDatabase
-import uz.texnopos.jaziwshilar.main.MainActivity
 
 class FragmentPoets : Fragment(R.layout.fragment_poets_list), PoetView {
     companion object {
         const val ID = "id"
     }
+
     lateinit var menuItem: MenuItem
     private lateinit var dao: PoetsDao
     private val adapter = PoetAdapter()
@@ -28,6 +28,7 @@ class FragmentPoets : Fragment(R.layout.fragment_poets_list), PoetView {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         dao = PoetsDatabase.getInstance(requireContext()).dao()
@@ -51,23 +52,23 @@ class FragmentPoets : Fragment(R.layout.fragment_poets_list), PoetView {
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.menu_search,menu)
+        inflater.inflate(R.menu.menu_search, menu)
         menuItem = menu.findItem(R.id.action_search)
         val viewSearch = menuItem.actionView as androidx.appcompat.widget.SearchView
         viewSearch.queryHint = getString(R.string.search)
         viewSearch.setOnQueryTextListener(object :
-            androidx.appcompat.widget.SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                viewSearch.clearFocus()
-                presenter.filter(query!!)
-                return false
-            }
+                androidx.appcompat.widget.SearchView.OnQueryTextListener {
+                override fun onQueryTextSubmit(query: String?): Boolean {
+                    viewSearch.clearFocus()
+                    presenter.filter(query!!)
+                    return false
+                }
 
-            override fun onQueryTextChange(newText: String?): Boolean {
-                presenter.filter(newText!!)
-                return false
-            }
-        })
+                override fun onQueryTextChange(newText: String?): Boolean {
+                    presenter.filter(newText!!)
+                    return false
+                }
+            })
         super.onCreateOptionsMenu(menu, inflater)
     }
 }

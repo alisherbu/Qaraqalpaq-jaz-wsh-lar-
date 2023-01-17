@@ -1,9 +1,6 @@
 package uz.texnopos.jaziwshilar.main
 
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.navigation.NavController
@@ -32,8 +29,11 @@ class MainActivity : AppCompatActivity() {
         navController = findNavController(R.id.nav_host_fragment_content_main)
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_poets, R.id.nav_chosen, R.id.nav_info
-            ), drawerLayout
+                R.id.nav_poets,
+                R.id.nav_chosen,
+                R.id.nav_info
+            ),
+            drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
 
@@ -46,9 +46,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        if (binding.drawerLayout.isDrawerOpen(GravityCompat.START))
+        if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
             binding.drawerLayout.closeDrawer(GravityCompat.START)
-        else {
+        } else {
             super.onBackPressed()
         }
     }

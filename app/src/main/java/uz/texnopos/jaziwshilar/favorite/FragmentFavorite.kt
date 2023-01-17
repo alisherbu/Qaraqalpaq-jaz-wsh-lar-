@@ -4,14 +4,14 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import kotlinx.android.synthetic.main.fragment_chosen.*
+import uz.texnopos.jaziwshilar.R
 import uz.texnopos.jaziwshilar.biography.BioActivity
 import uz.texnopos.jaziwshilar.data.Poets
 import uz.texnopos.jaziwshilar.data.PoetsDao
 import uz.texnopos.jaziwshilar.data.PoetsDatabase
 import uz.texnopos.jaziwshilar.poets.FragmentPoets.Companion.ID
 import uz.texnopos.jaziwshilar.poets.PoetAdapter
-import kotlinx.android.synthetic.main.fragment_chosen.*
-import uz.texnopos.jaziwshilar.R
 
 class FragmentFavorite : Fragment(R.layout.fragment_chosen), FavoriteView {
     private lateinit var presenter: FavoritePresenter

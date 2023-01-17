@@ -13,7 +13,8 @@ abstract class PoetsDatabase : RoomDatabase() {
             if (!Companion::INSTANCE.isInitialized) {
                 INSTANCE = Room.databaseBuilder(
                     context,
-                    PoetsDatabase::class.java, "poets12.db"
+                    PoetsDatabase::class.java,
+                    "poets12.db"
                 )
                     .allowMainThreadQueries()
                     .createFromAsset("poets12.db")
