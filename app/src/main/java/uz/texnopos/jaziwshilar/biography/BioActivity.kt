@@ -13,7 +13,7 @@ import uz.texnopos.jaziwshilar.R
 import uz.texnopos.jaziwshilar.data.PoetsDatabase
 import uz.texnopos.jaziwshilar.databinding.ActivityBioBinding
 
-class BioActivity : AppCompatActivity(R.layout.activity_bio), BiographyView {
+class BioActivity : AppCompatActivity(), BiographyView {
     private lateinit var binding: ActivityBioBinding
     private var favoriteItem: MenuItem? = null
     private lateinit var presenter: BiographyPresenter
@@ -22,6 +22,7 @@ class BioActivity : AppCompatActivity(R.layout.activity_bio), BiographyView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityBioBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val fromLeft = AnimationUtils.loadAnimation(this, R.anim.from_left)
         fromLeft.startOffset = 300

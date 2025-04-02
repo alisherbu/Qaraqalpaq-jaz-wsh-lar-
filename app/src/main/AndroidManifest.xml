@@ -8,11 +8,11 @@
         android:icon="@mipmap/ic_launcher_poet"
         android:roundIcon="@mipmap/ic_launcher_poet_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.QaraqalpaqJazıwshıları.NoActionBar">
+        android:theme="@style/Theme.QaraqalpaqJazıwshıları">
         <activity
             android:name="uz.texnopos.jaziwshilar.splash.SplashScreenActivity"
+            android:exported="true"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.QaraqalpaqJazıwshıları.NoActionBar"
             tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,15 +23,12 @@
         <activity
             android:name="uz.texnopos.jaziwshilar.main.MainActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.QaraqalpaqJazıwshıları.NoActionBar"
             android:windowSoftInputMode="stateAlwaysHidden"
             tools:ignore="LockedOrientationActivity">
 
         </activity>
 
-        <activity
-            android:name="uz.texnopos.jaziwshilar.biography.BioActivity"
-            android:theme="@style/Theme.QaraqalpaqJazıwshıları.NoActionBar">
+        <activity android:name="uz.texnopos.jaziwshilar.biography.BioActivity">
 
         </activity>
     </application>

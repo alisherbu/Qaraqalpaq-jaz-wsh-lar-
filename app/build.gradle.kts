@@ -35,8 +35,8 @@ dependencies {
 
     // room
     //noinspection GradleDependency
-    implementation("androidx.room:room-runtime:2.2.6")
-    kapt("androidx.room:room-compiler:2.2.6")
+    implementation("androidx.room:room-runtime:2.4.0")
+    kapt("androidx.room:room-compiler:2.4.0")
 
     implementation("org.jetbrains.kotlin:kotlin-stdlib:1.4.32")
     implementation("androidx.core:core-ktx:1.5.0")
@@ -48,10 +48,7 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment-ktx:2.3.5")
     implementation("androidx.navigation:navigation-ui-ktx:2.3.5")
 
-    implementation("com.mlsdev.animatedrv:library:2.0.0")
-
-    implementation("com.google.code.gson:gson:2.8.6")
-    implementation("com.airbnb.android:lottie:3.4.0")
+    implementation(project(":library"))
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.2")

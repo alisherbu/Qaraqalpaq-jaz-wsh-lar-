@@ -12,7 +12,6 @@
         android:layout_width="match_parent"
         android:backgroundTint="@color/toolbar_color"
         android:layout_height="wrap_content"
-        android:theme="@style/Theme.QaraqalpaqJazıwshıları.AppBarOverlay"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.appbar.MaterialToolbar
