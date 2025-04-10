@@ -9,22 +9,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.QaraqalpaqJazıwshıları">
         <activity
-            android:name="uz.texnopos.jaziwshilar.splash.SplashScreenActivity"
+            android:name="uz.texnopos.jaziwshilar.main.MainActivity"
             android:exported="true"
-            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden"
             tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name="uz.texnopos.jaziwshilar.main.MainActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateAlwaysHidden"
-            tools:ignore="LockedOrientationActivity">
-
         </activity>
 
         <activity android:name="uz.texnopos.jaziwshilar.biography.BioActivity">
