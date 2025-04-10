@@ -2,16 +2,16 @@
 
 plugins {
     id("com.android.application")
-    id("kotlin-android")
-    id("kotlin-kapt")
+    id("org.jetbrains.kotlin.android")
+    id("com.google.devtools.ksp")
 }
 
 android {
     compileSdk = 34
-    namespace = "uz.texnopos.jaziwshilar"
+    namespace = "com.alisherbu.writers"
 
     defaultConfig {
-        applicationId = "uz.texnopos.jaziwshilar"
+        applicationId = "com.alisherbu.writers"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -30,14 +30,14 @@ android {
     }
 }
 
+ksp {
+    arg("room.schemaLocation", "$projectDir/schemas")
+}
+
 dependencies {
+    implementation("androidx.room:room-runtime:2.7.0")
+    ksp("androidx.room:room-compiler:2.7.0")
 
-    // room
-    //noinspection GradleDependency
-    implementation("androidx.room:room-runtime:2.4.0")
-    kapt("androidx.room:room-compiler:2.4.0")
-
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.8.10")
     implementation("androidx.core:core-ktx:1.13.1")
     implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("com.google.android.material:material:1.12.0")
@@ -46,8 +46,6 @@ dependencies {
     // jetpack
     implementation("androidx.navigation:navigation-fragment-ktx:2.8.9")
     implementation("androidx.navigation:navigation-ui-ktx:2.8.9")
-
-    implementation(project(":library"))
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.2.1")

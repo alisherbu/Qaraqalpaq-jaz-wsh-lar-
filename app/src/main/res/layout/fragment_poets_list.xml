@@ -7,14 +7,12 @@
     android:background="@color/back"
     tools:context=".poets.FragmentPoets">
 
-    <com.mlsdev.animatedrv.AnimatedRecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginHorizontal="@dimen/margin_standard"
-        app:animationDuration="600"
-        app:layoutManagerOrientation="vertical"
-        app:layoutManagerReverse="false"
-        app:layoutManagerType="linear" />
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

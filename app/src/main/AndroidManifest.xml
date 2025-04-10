@@ -5,11 +5,12 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_poet"
+        android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_poet_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.QaraqalpaqJazıwshıları">
         <activity
-            android:name="uz.texnopos.jaziwshilar.main.MainActivity"
+            android:name="com.alisherbu.writers.main.MainActivity"
             android:exported="true"
             android:windowSoftInputMode="stateAlwaysHidden"
             tools:ignore="LockedOrientationActivity">
@@ -19,7 +20,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="uz.texnopos.jaziwshilar.biography.BioActivity">
+        <activity android:name="com.alisherbu.writers.biography.BioActivity">
 
         </activity>
     </application>
