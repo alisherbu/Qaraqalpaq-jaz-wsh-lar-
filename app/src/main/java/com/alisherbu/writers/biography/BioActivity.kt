@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.text.HtmlCompat
 import com.alisherbu.writers.R
@@ -18,6 +19,7 @@ class BioActivity : AppCompatActivity(), BiographyView {
     private val dao = PoetsDatabase.getInstance(this).dao()
     private var toast = false
     override fun onCreate(savedInstanceState: Bundle?) {
+        enableEdgeToEdge()
         super.onCreate(savedInstanceState)
         binding = ActivityBioBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -26,8 +28,6 @@ class BioActivity : AppCompatActivity(), BiographyView {
         presenter = BiographyPresenter(dao, this, id)
         presenter.getBiography()
         setSupportActionBar(binding.toolbar)
-
-        supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_24)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
     }
 
@@ -66,11 +66,11 @@ class BioActivity : AppCompatActivity(), BiographyView {
 
     override fun changeBookmark(isPressed: Boolean) {
         if (isPressed) {
-            if (toast) Snackbar.make(binding.ln, "Сайландыларға қосылды", Snackbar.LENGTH_SHORT)
+            if (toast) Snackbar.make(binding.root, "Сайландыларға қосылды", Snackbar.LENGTH_SHORT)
                 .show()
             favoriteItem!!.setIcon(R.drawable.ic_baseline_bookmark_24)
         } else {
-            if (toast) Snackbar.make(binding.ln, "Сайландылардан өширилди", Snackbar.LENGTH_SHORT)
+            if (toast) Snackbar.make(binding.root, "Сайландылардан өширилди", Snackbar.LENGTH_SHORT)
                 .show()
             favoriteItem!!.setIcon(R.drawable.ic_baseline_bookmark_border_24)
         }

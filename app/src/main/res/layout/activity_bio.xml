@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/ln"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -10,18 +9,17 @@
         android:id="@+id/app_bar_bio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent">
+        android:fitsSystemWindows="true">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="wrap_content"
             app:title="@string/menu_poets" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <ScrollView
-        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginHorizontal="@dimen/margin_standard"
@@ -38,6 +36,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_standard"
                 android:gravity="center"
+                android:textIsSelectable="true"
                 android:textSize="26sp"
                 android:textStyle="bold" />
 
@@ -47,6 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:gravity="center"
+                android:textIsSelectable="true"
                 android:textSize="22sp"
                 android:textStyle="bold" />
 
@@ -54,7 +54,8 @@
                 android:id="@+id/tvBio"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="@dimen/margin_standard"
+                android:layout_marginBottom="32dp"
+                android:textIsSelectable="true"
                 android:textSize="18sp" />
         </LinearLayout>
 
