@@ -1,17 +1,15 @@
 package com.alisherbu.writers.biography
 
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.text.HtmlCompat
-import com.google.android.material.snackbar.Snackbar
 import com.alisherbu.writers.R
 import com.alisherbu.writers.data.PoetsDatabase
 import com.alisherbu.writers.databinding.ActivityBioBinding
+import com.google.android.material.snackbar.Snackbar
 
 class BioActivity : AppCompatActivity(), BiographyView {
     private lateinit var binding: ActivityBioBinding
@@ -23,16 +21,6 @@ class BioActivity : AppCompatActivity(), BiographyView {
         super.onCreate(savedInstanceState)
         binding = ActivityBioBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        val fromLeft = AnimationUtils.loadAnimation(this, R.anim.from_left)
-        fromLeft.startOffset = 300
-        binding.tvPoetName.startAnimation(fromLeft)
-        val fadeFromIn = AnimationUtils.loadAnimation(this, R.anim.fade_from_in)
-        fadeFromIn.startOffset = 800
-        binding.tvPoetLife.startAnimation(fadeFromIn)
-        val fromBottom = AnimationUtils.loadAnimation(this, R.anim.from_bottom)
-        fromBottom.startOffset = 1000
-        binding.tvBio.startAnimation(fromBottom)
 
         val id = intent.getIntExtra("id", 1)
         presenter = BiographyPresenter(dao, this, id)
@@ -79,14 +67,10 @@ class BioActivity : AppCompatActivity(), BiographyView {
     override fun changeBookmark(isPressed: Boolean) {
         if (isPressed) {
             if (toast) Snackbar.make(binding.ln, "Сайландыларға қосылды", Snackbar.LENGTH_SHORT)
-                .setBackgroundTint(Color.BLACK)
-                .setTextColor(Color.WHITE)
                 .show()
             favoriteItem!!.setIcon(R.drawable.ic_baseline_bookmark_24)
         } else {
             if (toast) Snackbar.make(binding.ln, "Сайландылардан өширилди", Snackbar.LENGTH_SHORT)
-                .setBackgroundTint(Color.BLACK)
-                .setTextColor(Color.WHITE)
                 .show()
             favoriteItem!!.setIcon(R.drawable.ic_baseline_bookmark_border_24)
         }
