@@ -36,6 +36,7 @@ class FragmentPoets : Fragment(R.layout.fragment_poets_list), PoetView {
         dao = PoetsDatabase.getInstance(requireContext()).dao()
         presenter = PoetPresenter(dao, this)
         presenter.getAllPoets()
+        binding.recyclerView.addItemDecoration(CustomItemDecoration(requireContext()))
         binding.recyclerView.adapter = adapter
 
         val intent = Intent(requireContext(), BioActivity::class.java)
@@ -59,18 +60,18 @@ class FragmentPoets : Fragment(R.layout.fragment_poets_list), PoetView {
         val viewSearch = menuItem.actionView as androidx.appcompat.widget.SearchView
         viewSearch.queryHint = getString(R.string.search)
         viewSearch.setOnQueryTextListener(object :
-                androidx.appcompat.widget.SearchView.OnQueryTextListener {
-                override fun onQueryTextSubmit(query: String?): Boolean {
-                    viewSearch.clearFocus()
-                    presenter.filter(query!!)
-                    return false
-                }
+            androidx.appcompat.widget.SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                viewSearch.clearFocus()
+                presenter.filter(query!!)
+                return false
+            }
 
-                override fun onQueryTextChange(newText: String?): Boolean {
-                    presenter.filter(newText!!)
-                    return false
-                }
-            })
+            override fun onQueryTextChange(newText: String?): Boolean {
+                presenter.filter(newText!!)
+                return false
+            }
+        })
         super.onCreateOptionsMenu(menu, inflater)
     }
 }
