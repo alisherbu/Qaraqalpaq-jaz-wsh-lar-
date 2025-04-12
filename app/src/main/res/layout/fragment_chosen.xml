@@ -38,6 +38,7 @@
         android:layout_marginHorizontal="@dimen/margin_standard"
         android:layout_marginTop="@dimen/margin_standard"
         android:orientation="vertical"
+        android:contentDescription="@string/menu_chosen"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

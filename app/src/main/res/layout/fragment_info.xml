@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:linksClickable="true"
         android:padding="18dp"
+        android:contentDescription="@string/menu_info"
         android:text="@string/book_info"
         android:textSize="16sp" />
 

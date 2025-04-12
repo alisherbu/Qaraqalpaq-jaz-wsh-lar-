@@ -23,6 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginHorizontal="@dimen/margin_standard"
+        android:overScrollMode="never"
         android:scrollbars="none">
 
         <LinearLayout
@@ -38,6 +39,7 @@
                 android:gravity="center"
                 android:textIsSelectable="true"
                 android:textSize="26sp"
+                android:contentDescription="@string/full_name"
                 android:textStyle="bold" />
 
             <TextView
@@ -48,13 +50,15 @@
                 android:gravity="center"
                 android:textIsSelectable="true"
                 android:textSize="22sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:contentDescription="@string/span_date"/>
 
             <TextView
                 android:id="@+id/tvBio"
+                android:layout_marginBottom="48dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="32dp"
+                android:contentDescription="@string/biography"
                 android:textIsSelectable="true"
                 android:textSize="18sp" />
         </LinearLayout>
