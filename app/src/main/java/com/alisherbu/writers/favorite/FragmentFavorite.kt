@@ -12,6 +12,7 @@ import com.alisherbu.writers.data.PoetsDatabase
 import com.alisherbu.writers.databinding.FragmentChosenBinding
 import com.alisherbu.writers.poets.FragmentPoets.Companion.ID
 import com.alisherbu.writers.poets.PoetAdapter
+import com.alisherbu.writers.utils.CustomItemDecoration
 
 class FragmentFavorite : Fragment(R.layout.fragment_chosen), FavoriteView {
     private lateinit var binding: FragmentChosenBinding
@@ -22,6 +23,7 @@ class FragmentFavorite : Fragment(R.layout.fragment_chosen), FavoriteView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentChosenBinding.bind(view)
+        binding.rvChosen.addItemDecoration(CustomItemDecoration(requireContext()))
         binding.rvChosen.adapter = adapter
         dao = PoetsDatabase.getInstance(requireContext()).dao()
         presenter = FavoritePresenter(dao, this)

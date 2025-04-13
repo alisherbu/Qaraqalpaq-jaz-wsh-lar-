@@ -1,4 +1,4 @@
-package com.alisherbu.writers.poets
+package com.alisherbu.writers.utils
 
 import android.content.Context
 import android.graphics.Rect

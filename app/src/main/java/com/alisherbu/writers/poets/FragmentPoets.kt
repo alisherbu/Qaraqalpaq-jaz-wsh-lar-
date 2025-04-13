@@ -13,6 +13,7 @@ import com.alisherbu.writers.data.PoetEntity
 import com.alisherbu.writers.data.PoetsDao
 import com.alisherbu.writers.data.PoetsDatabase
 import com.alisherbu.writers.databinding.FragmentPoetsListBinding
+import com.alisherbu.writers.utils.CustomItemDecoration
 
 class FragmentPoets : Fragment(R.layout.fragment_poets_list), PoetView {
     private lateinit var binding: FragmentPoetsListBinding
