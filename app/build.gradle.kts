@@ -40,7 +40,7 @@ ksp {
 }
 
 dependencies {
-    implementation("androidx.room:room-runtime:2.7.0")
+    implementation("androidx.room:room-runtime:2.7.1")
     ksp("androidx.room:room-compiler:2.7.0")
 
     implementation("androidx.core:core-ktx:1.16.0")
